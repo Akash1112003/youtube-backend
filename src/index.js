@@ -22,7 +22,11 @@ app.use(morgan("tiny")); //for logging
 
 
 //  { origin: "", credentials: true }
-app.use(cors({origin:"*",credentials:true}));
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://youtube-frontend-theta-one.vercel.app'],
+  credentials: true
+} 
+));
 
 //routes
 app.get("/", (req, res) => {
